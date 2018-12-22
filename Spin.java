@@ -32,6 +32,27 @@ public class Spin {
 		return value;
 	}
 
+	/**flips the spin */
+	public void flip() {
+		value = -value;
+	}
+
+	/**gets the square distance to another spin
+ * 	@param another Spin, another spin
+ * 	@return int, the square distance to the other spin */
+	public int sqrDistanceTo(Spin another) {
+		int dx = x-another.getX();
+		int dy = y-another.getY();
+		return dx*dx + dy*dy;
+	}
+
+	/**checks if two spins are at the same position and have the same value
+ * 	@param another Spin, another spin
+ * 	@return boolean, if the other spin is at the same position and have the same value */
+	public boolean equals(Spin another) {
+		return (x == another.getX() && y == another.getY() && value == another.getValue());
+	}
+
 	/**to string
  * 	@return String, a string that has the info of the spin*/
 	public String toString() {
