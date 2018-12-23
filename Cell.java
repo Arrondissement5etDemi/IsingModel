@@ -45,6 +45,12 @@ public class Cell {
 		return sideLength;
 	}
 
+	/**size accessor
+ * 	@return int, the number of spins in the cell */
+	public int getSize() {
+		return size;
+	}
+
 	/**spinArr accessor
  * 	@return Spin[], a deep copy of spinArr */
 	public Spin[] toArray() {
@@ -148,12 +154,12 @@ public class Cell {
 		return sp;
 	}
 
-	/**computes the energy change caused by a spin flip
+	/**computes the change of the total energy caused by a spin flip
  * 	@param spinFlipped Spin, the spin that has been flipped
  * 	@param k double, the coupling constant
  * 	@return double, the energy change caused by this flip */
 	public double energyChangeByFlip(Spin spinFlipped, double k) {
-		return energyAtSpin(spinFlipped,k)*2.0/(double)size;
+		return energyAtSpin(spinFlipped,k)*2.0;
 	}
 
 	/**to string
