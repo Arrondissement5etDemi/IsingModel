@@ -110,7 +110,7 @@ public class Cell {
 			//check if that spin is a neighbor of sp
 			for (int j = 0; j < neighborSize; j++) {
 				if (thatX == neighbors[j][0] && thatY == neighbors[j][1]) { 
-					result = result + k*(double)sp.getValue()*(double)thatSpin.getValue();
+					result = result - k*(double)sp.getValue()*(double)thatSpin.getValue();
 				}
 			}
 		}
