@@ -139,11 +139,21 @@ public class Cell {
 		return (double)totalMag/(double)size;
 	}
 
-	/**flips a random spin in the cell */
-	public void randomFlip() {
+	/**flips a random spin in the cell
+ * 	@return Spin, the spin flipped  */
+	public Spin randomFlip() {
 		int ind = (int) Math.floor(getRandomNumberInRange(0.0,(double)size));
 		Spin sp = spinArr[ind];
 		sp.flip();
+		return sp;
+	}
+
+	/**computes the energy change caused by a spin flip
+ * 	@param spinFlipped Spin, the spin that has been flipped
+ * 	@param k double, the coupling constant
+ * 	@return double, the energy change caused by this flip */
+	public double energyChangeByFlip(Spin spinFlipped, double k) {
+		return energyAtSpin(spinFlipped,k)*2.0/(double)size;
 	}
 
 	/**to string
