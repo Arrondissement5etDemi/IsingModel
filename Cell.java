@@ -22,10 +22,12 @@ public class Cell {
 			}
 		}
 		if (dim == 2) {//for 2D cell
+			int k = 0;
 			for (int i = 0; i < sideLength; i++) {
 				for (int j = 0; j < sideLength; j++) {
                                 	Spin p = new Spin(i, j, 1);
-                                	spinArr[i] = p;
+                                	spinArr[k] = p;
+					k++;
 				}
                         }
 		}
@@ -149,7 +151,7 @@ public class Cell {
 	public String toString() {
 		String result = "";
 		for (int i = 0; i < size; i++) {
-			result = result + spinArr.toString() + "\n";
+			result = result + spinArr[i].toString() + "\n";
 		}
 		return result;
 	}
