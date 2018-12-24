@@ -37,6 +37,15 @@ public class Spin {
 		value = -value;
 	}
 
+	/**sets spin value 
+ * 	@param v int, the value to be set, must be 1 or -1 */
+	public void setValue(int v) {
+		if (v != 1 && v != -1) {
+                        throw new IllegalArgumentException("v must be either 1 or -1");
+                }
+		value = v;
+	}
+	
 	/**gets the square distance to another spin
  * 	@param another Spin, another spin
  * 	@return int, the square distance to the other spin */

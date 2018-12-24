@@ -162,6 +162,13 @@ public class Cell {
 		return energyAtSpin(spinFlipped,k)*2.0;
 	}
 
+	/**initializes the cell, makes all spin values = 1 */
+	public void initialize() {
+		for (int i = 0; i < size; i++) {
+			spinArr[i].setValue(1);
+		}
+	}
+
 	/**to string
  * 	@return String, a string of the info of the spins in the cell */
 	public String toString() {
