@@ -3,15 +3,16 @@ import java.text.DecimalFormat;
 
 public class IsingModel {
 	public static void main(String[] args) {
-		double k = 0.2;
-		int dim = 1;
-		int sideLength = 16;
+		double k = 0.5;
+		int dim = 2;
+		int sideLength = 64;
 		Cell pandora = new Cell(dim,sideLength);
 		System.out.println("initial energy = " + pandora.averageEnergy(k));
 		System.out.println("initial magnetization = " + pandora.averageMag());
 		
-		int totalTime = 1000;
-		int relaxTime = 3;//obtained from a plot by Relaxation.java
+		int relaxTime = 20;//obtained from a plot by Relaxation.java
+		int littleN = 300;//how many independent data to collect
+		int totalTime = littleN*relaxTime;
 		System.out.println(energyAndMag(pandora,k,relaxTime,totalTime));
 	}
 	
@@ -51,7 +52,7 @@ public class IsingModel {
 				double instantE = pandora.averageEnergy(k);
 				e = e + instantE;
 				eSqr = eSqr + instantE*instantE;
-				double instantM = Math.abs(pandora.averageMag());
+				double instantM =pandora.averageMag();
 				m = m + instantM;
 				mSqr = mSqr + instantM*instantM;
 			}

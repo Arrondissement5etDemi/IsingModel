@@ -17,7 +17,7 @@ public class Report {
  * 	@return String, the string report energy and magnetization */
 	public String toString() {
 		return "The number of samples: " + n + "\n" +
-			"Energy: " + e + " +- " + uncertE + "\n" +
-			"Magnetization: " + m + " +- " + uncertM;
+			"Energy: " + e + " " + uncertE + "\n" +
+			"Magnetization: " + m + " " + uncertM;
 	}
 }
